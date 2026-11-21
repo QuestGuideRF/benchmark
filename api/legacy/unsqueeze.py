@@ -1,0 +1,21 @@
+from common_import import *
+class PDUnsqueeze (PaddleAPIBenchmarkBase ):
+    def build_program (self ,config ):
+        input =self .variable (
+        name ='input',shape =config .input_shape ,dtype =config .input_dtype )
+        result =fluid .layers .unsqueeze (input =input ,axes =config .axes )
+        self .feed_vars =[input ]
+        self .fetch_vars =[result ]
+        if config .backward :
+            self .append_gradients (result ,[input ])
+class TFUnsqueeze (TensorflowAPIBenchmarkBase ):
+    def build_graph (self ,config ):
+        input =self .variable (
+        name ='input',shape =config .input_shape ,dtype =config .input_dtype )
+        result =tf .expand_dims (input =input ,axis =config .axes )
+        self .feed_list =[input ]
+        self .fetch_list =[result ]
+        if config .backward :
+            self .append_gradients (result ,[input ])
+if __name__ =='__main__':
+    test_main (PDUnsqueeze (),TFUnsqueeze (),config =APIConfig ("unsqueeze"))

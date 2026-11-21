@@ -1,0 +1,57 @@
+[{
+    "op": "allclose",
+    "paddle_api": "paddle.allclose(x, y, rtol, atol, equal_nan)",
+    "torch_api": "torch.allclose(input, other, rtol, atol, equal_nan)",
+    "param_info": {
+        "x": {
+            "dtype": "float32",
+            "shape": "[16L, 10L, 100L]",
+            "type": "Variable"
+        },
+        "y": {
+            "dtype": "float32",
+            "shape": "[16L, 10L, 100L]",
+            "type": "Variable"
+        },
+        "rtol": {
+            "type": "float32",
+            "value": "1e-05"
+        },
+        "atol": {
+            "type": "float32",
+            "value": "1e-08"
+        },
+        "equal_nan": {
+            "type": "bool",
+            "value": "False"
+        }
+    }
+}, {
+    "op": "allclose",
+    "paddle_api": "paddle.allclose(x, y, rtol, atol, equal_nan)",
+    "torch_api": "torch.allclose(input, other, rtol, atol, equal_nan)",
+    "param_info": {
+        "x": {
+            "dtype": "float64",
+            "shape": "[16L, 256L, 10L, 10L]",
+            "type": "Variable"
+        },
+        "y": {
+            "dtype": "float64",
+            "shape": "[16L, 256L, 10L, 10L]",
+            "type": "Variable"
+        },
+        "rtol": {
+            "type": "float32",
+            "value": "1e-05"
+        },
+        "atol": {
+            "type": "float32",
+            "value": "1e-08"
+        },
+        "equal_nan": {
+            "type": "bool",
+            "value": "False"
+        }
+    }
+}]
